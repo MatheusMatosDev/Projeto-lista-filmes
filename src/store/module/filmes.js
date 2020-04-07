@@ -12,8 +12,22 @@ const getters = {
 };
 const actions = { 
  
-  deleteFilme({commit}, filme){
+  deleteFilme({ commit }, filme){
     commit ("removeFilme", filme)
+  },
+  editarFilme({commit},filmeEditado){
+    
+      const resp ={
+        "name": filmeEditado.name,
+        "nota": filmeEditado.nota,
+        "image": filmeEditado.image
+      }
+   
+   
+     
+
+   
+    commit("editFilme",resp);
   },
   
   addFilme({ commit }, filme_add) { 
@@ -32,7 +46,18 @@ const actions = {
   }
 };
    const mutations = {
+    editFilme: (state, filme) => 
+      state.filmes.forEach(element => {
+       if(element.name === filme.name){
+      element.nota = filme.nota;
+      element.image = filme.image;
+
+     }
+       
+     }),
      
+
+    
      newFilme: (state, filme) => state.filmes.push(filme),
      removeFilme: (state, name) =>
      (state.filmes = state.filmes.filter(f => f.name !== name ))
