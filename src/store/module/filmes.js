@@ -1,9 +1,9 @@
 
 const state = {
     filmes: [
-    {name: "frozen 2", nota:6, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBR98_qi1DbdOmqsmqEUWpsAVaCyz0gg-cAtScmkXl8j9KoKvj'},
-    {name: "vingadores ultimato", nota: 9, image: 'https://upload.wikimedia.org/wikipedia/pt/9/9b/Avengers_Endgame.jpg'},
-    {name: "naruto",  nota: 10, image: 'https://upload.wikimedia.org/wikipedia/pt/f/f5/The_Last_Naruto_the_Movie.jpg'},
+    {name: "frozen 2", nota:6, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBR98_qi1DbdOmqsmqEUWpsAVaCyz0gg-cAtScmkXl8j9KoKvj',genero:"infantil"},
+    {name: "vingadores ultimato", nota: 9, image: 'https://upload.wikimedia.org/wikipedia/pt/9/9b/Avengers_Endgame.jpg',genero:"ação"},
+    {name: "naruto",  nota: 10, image: 'https://upload.wikimedia.org/wikipedia/pt/f/f5/The_Last_Naruto_the_Movie.jpg', genero:"ação"},
     ]
      
 };
@@ -35,6 +35,7 @@ const actions = {
           "name": filme_add.name.toLowerCase(),
           "nota": filme_add.nota,
           "image": filme_add.image,
+          "genero": filme_add.genero
     }
     const mesmoNome = filmes => filmes.name === filme_add.name.trim().toLowerCase()
     const filtradoFilmes = state.filmes.filter(mesmoNome)

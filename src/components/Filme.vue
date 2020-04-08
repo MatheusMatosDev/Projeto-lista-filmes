@@ -25,6 +25,7 @@
           >
              <b-card-text>
              Nota:{{filme.nota}}
+             Gen:{{filme.genero}}
             </b-card-text>
           </b-card>
           </div>

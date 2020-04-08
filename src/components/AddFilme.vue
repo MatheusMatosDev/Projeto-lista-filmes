@@ -9,7 +9,16 @@
         <div><input type="number" required v-model="filme_add.nota" placeholder=" Nota do filme"></div>
         <div><h2>Imagem:</h2></div>
         <div><input type="text" required v-model="filme_add.image" placeholder="URL da imagem do filme"></div>
+         <b-form-group id="input-group-3" style="color:white;" label="Genero:" label-for="input-3">
+                        <b-form-select
+                          id="filme.genero"
+                          v-model="filme_add.genero"
+                          :options="filme_add.generos"
+                          required
+                        ></b-form-select>
+                      </b-form-group>
         <div><input type="submit" value="Submit"></div>
+       
       </form>
     </div>
   </div>
@@ -24,7 +33,10 @@ export default {
       filme_add :{
         name: "",
         nota: "",
-        image:""
+        image:"",
+        genero:"",
+        generos: [
+          { value: null, text: 'Selecione uma opção' },"infantil","Comédia", "Ação", "suspense","drama"]
       }
     };
   },
